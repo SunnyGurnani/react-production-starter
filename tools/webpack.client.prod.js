@@ -7,6 +7,12 @@ const { CLIENT_ENTRY, CLIENT_OUTPUT, PUBLIC_PATH } = CONFIG
 
 module.exports = {
   devtool: false,
+  resolve: {
+    'alias': {
+    'react': 'preact-compat',
+    'react-dom': 'preact-compat'
+}
+   },
   entry: {
     main: [CLIENT_ENTRY],
     vendor: [
@@ -56,7 +62,7 @@ module.exports = {
         loader: 'babel',
         query: {
           cacheDirectory: true,
-          presets: ["es2015", "react", "stage-0", "react-optimize"],
+          presets: ["es2015", "react", "stage-0"],
         },
         exclude: /(node_modules)/
       }

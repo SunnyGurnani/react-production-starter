@@ -6,6 +6,12 @@ const { CLIENT_ENTRY, CLIENT_OUTPUT, PUBLIC_PATH } = CONFIG
 
 module.exports = {
   devtool: 'eval',
+  resolve: {
+       alias: {
+           'react': 'preact-compat',
+           'react-dom': 'preact-compat'
+       }
+   },
   entry: {
     main: [
       'webpack/hot/only-dev-server',
